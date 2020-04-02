@@ -5,7 +5,7 @@ Created on Thu Apr  2 12:41:09 2020
 
 @author: Govinda KC
 
-Leetcode Problems: (1) 876. Middle of the Linked List
+Leetcode problems: (1) 876. Middle of the Linked List
                    (2) 237. Delete Node in a Linked List
                    (3) 206. Reverse Linked List
                    (4) 234. Palindrom Linked List
