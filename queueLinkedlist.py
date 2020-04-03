@@ -5,7 +5,7 @@ Created on Thu Apr  2 10:05:40 2020
 @author: Govinda KC
 
 Implementation of Queue using Singly Linked List
-Time Complexicity: O(1) (for adding and removing the items)
+Time Complexity: O(1) (for adding and removing the items)
 
 """
 
