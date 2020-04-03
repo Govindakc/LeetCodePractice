@@ -31,7 +31,6 @@ class Solution:
             L.tail = L.tail.next
             
     def printList(self, L):
-
         while L:
             print(L.val)
             L = L.next 
@@ -49,7 +48,6 @@ class Solution:
         return prev
     
     def middleNode(self, head):
-        
         slow = head
         fast = head
         
@@ -58,7 +56,6 @@ class Solution:
                 return slow
             fast = fast.next.next
             slow = slow.next
-            
             
         if fast == None:
             return slow
@@ -80,7 +77,6 @@ class Solution:
         return False
     
 def main():
-
     # Create a Linked List
     for a in N:
         Solution().insertItems(a)
@@ -112,25 +108,7 @@ def main():
     print('Reversed Linked List')
     Solution().printList(reversedList)
     
-    
-
 if __name__ == '__main__':
-    
     N = [3,2,2,1]
-    
     L = Solution()
-    
     main()
-    
-    
-        
-    
-        
-        
-    
-    
-    
-    
-        
-        
-        

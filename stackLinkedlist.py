@@ -30,7 +30,6 @@ class Stack:
             temp = temp.next
             
     def push(self, L, item):
-        
         newnode = Node(item)
         if L.tail == None:
             L.head = L.tail = newnode
@@ -49,9 +48,7 @@ class Stack:
             L.head = temp
             L.head.next = temp.next
                              
-        
 if __name__ == '__main__':
-    
     s = Stack()
     A = [2,3,5,6,7]
     # A = [random.randint(0,100) for i in range(10)]
@@ -67,8 +64,3 @@ if __name__ == '__main__':
         s.pop(L)
     print('List after removing items [Last in First Out (LIFO)]')
     s.Print(L)
-
-    
-        
-        
-        

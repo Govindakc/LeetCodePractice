@@ -26,7 +26,6 @@ class Queue:
             return True
         
     def Print(self, L):
-        
         if self.Empty(L):
             print('Linked list is Empty')
             return
@@ -37,7 +36,6 @@ class Queue:
             temp = temp.next
             count+=1
     def add(self, L, item):
-        
         newnode = Node(item)
         if L.tail == None:
             L.head = L.tail = newnode
@@ -59,10 +57,10 @@ class Queue:
                    
         
 if __name__ == '__main__':
-    
     q = Queue() 
     A = [2,3,5,6,7]
     # A = [random.randint(0,100) for i in range(10)]
+    
     L = Queue()
     for a in A:
         q.add(L, a)
@@ -76,8 +74,3 @@ if __name__ == '__main__':
     # Print Linked List
     print('Linked List after removing items [First in First Out (FIFO)]')    
     q.Print(L)
-
-    
-        
-        
-        
