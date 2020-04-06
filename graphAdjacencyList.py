@@ -6,7 +6,7 @@ class Graph:
         self.graph_list = graph_list
         self.is_directed = is_directed
         
-    def add_nodes(self):
+    def addEdges(self):
         for u,v in self.nodes:
             self.graph_list[u].append(v)
             
@@ -14,14 +14,14 @@ class Graph:
             if not self.is_directed:
                 self.graph_list[v].append(u)
         
-    def print_graph(self):
+    def printGraph(self):
         for i in self.graph_list:
             print(str(i)+'------->'+ str(self.graph_list[i]))
         
 if __name__ == '__main__':
     
     L = [(1,2), (3,4), (1,3), (4,5), (4,2)]
-    # If we want directed graph: is_directed=True
+    # For directed graph: is_directed=True
     gp = Graph(L, is_directed=False)
-    gp.add_nodes()
-    gp.print_graph()
+    gp.addEdges()
+    gp.printGraph()
