@@ -25,7 +25,6 @@ class Graph(object):
     def removeEdge(self, v1, v2):
         if self.adjMatrix[v1][v2] == 0:
             print(f"No edge is found between {v1} and {v2}")
-            
             return
         self.adjMatrix[v1][v2] = 0
         self.adjMatrix[v2][v1] = 0
@@ -39,7 +38,6 @@ class Graph(object):
 
     def edgeList(self, size):
         EL = [[random.randint(0,size-1) for i in range(2)] for i in range(size-1)]
-        
         return EL
         
 def main():
