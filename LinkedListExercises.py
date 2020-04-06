@@ -9,6 +9,7 @@ Leetcode problems: (1) 876. Middle of the Linked List
                    (2) 237. Delete Node in a Linked List
                    (3) 206. Reverse Linked List
                    (4) 234. Palindrom Linked List
+HackerRank problems: insertNodeAtPosition 
 """
 
 class ListNode:
@@ -17,7 +18,8 @@ class ListNode:
         self.next = None
 
 class Solution:
-    
+    # List
+    # Constructor    
     def __init__(self, head = None, tail = None):
         self.head = head
         self.tail = tail
@@ -29,7 +31,13 @@ class Solution:
         else:
             L.tail.next = ListNode(val)
             L.tail = L.tail.next
-            
+    def getSize(self, head):
+        count = 0
+        while head:
+            count += 1
+            head = head.next
+        return count
+
     def printList(self, L):
         while L:
             print(L.val)
@@ -76,14 +84,35 @@ class Solution:
             return True
         return False
     
+    def insertNodeAtPosition(self, head, val, position):
+        counter = 0 
+        node = ListNode(val)
+        temp = node
+
+        if self.getSize(head) < position:
+            print('Index is out of range')
+            return
+ 
+        elif  position == 0:
+            node.next = head
+            return temp
+        else:
+            current = head
+            while counter < (position-1):
+                current = current.next
+                counter+=1
+            temp = current.next
+            current.next = node
+            node.next = temp
+            return head
+        
 def main():
     # Create a Linked List
     for a in N:
         Solution().insertItems(a)
-        
-    print('Printing the Linked List')
-    Solution().printList(L.head)
     
+    print('Print Linked List')
+    Solution().printList(L.head)
     
     # Get the middle node of the Linked List
     # If there are two middle nodes, return the second middle node
@@ -91,8 +120,12 @@ def main():
     mid = Solution().middleNode(L.head)
 
     print('Linked list from the middle')
-    Solution().printList(mid)
+    Solution().printList(mid)# not L.head or mid.head: (not the head of the list)
     
+    # Insert a node at specific position
+    temp = Solution().insertNodeAtPosition(L.head, 8, 4)
+    print('Print Linked List after insertion')
+    Solution().printList(temp) # not L.head or temp.head: (not the head of the list)
     # Delete the a node from a Linked List
     Solution().deleteNode(L.head.next)
     
@@ -101,7 +134,7 @@ def main():
     
     print('Check if the Linked List is Palindrome')
     print(Solution().isPalindrome(L.head))
-    
+
     # Reverse Linked List
     reversedList = Solution().reverseList(L.head)
 
@@ -109,6 +142,6 @@ def main():
     Solution().printList(reversedList)
     
 if __name__ == '__main__':
-    N = [3,2,2,1]
+    N = [3,2,2,1,6]
     L = Solution()
     main()
